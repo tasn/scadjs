@@ -1,0 +1,23 @@
+{
+  "name": "scadjs",
+  "version": "0.1.0",
+  "description": "Create OpenScad files easily using JavaScript and an OpenScad like syntax",
+  "main": "libscadjs.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "jscs *.js && jshint *.js"
+  },
+  "bin": {
+    "scadjs": "./scad.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tasn/scadjs.git"
+  },
+  "keywords": [
+    "scad",
+    "openscad"
+  ],
+  "author": "Tom Hacohen <tom@stosb.com> (https://stosb.com)",
+  "license": "BSD-3-Clause"
+}
