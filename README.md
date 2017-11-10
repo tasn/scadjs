@@ -19,7 +19,7 @@ Integration is seamless.
 
 ## Installation
 
-`npm install scadjs`
+`npm install -g scadjs`
 
 ## Usage
 
