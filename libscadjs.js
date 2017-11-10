@@ -55,6 +55,27 @@ class ScadBase {
     this.props = Object.assign({}, newProps, this.props);
   }
 
+  rotateExtrude(angle, convexity) {
+    class RotateExtrude extends ScadBase {
+      constructor(children, angle, convexity) {
+        super(center);
+        this.type = 'rotate_extrude'; // Manually set the type as it doesn't match the class name
+        this.children = children;
+        this.set({angle: angle, convexity: convexity});
+      }
+
+      compile(out) {
+        super.compile(out);
+        out(this.dictToParams(this.props) + ') {\n');
+        this.compileChildren(out);
+        out('}\n');
+      }
+    }
+
+    return new RotateExtrude([this], angle, convexit);
+  }
+
+
   typeToString(param) {
     if (param instanceof Array) {
       return '[' + param.reduce((x, y) => (x + ', ' + this.typeToString(y))) + ']';
