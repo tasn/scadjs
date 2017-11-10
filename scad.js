@@ -28,14 +28,14 @@ function out(text) {
 
 libscadjs.RawOpenScad.text = (x) => (out(x + '\n'));
 
-// Load the file giving it access to our scope
-const main = (function() {
-  eval(fs.readFileSync(infile, 'UTF8'));
-  return main;
-})();
-
 // Compile
 try {
+  // Load the file giving it access to our scope
+  const main = (function() {
+    eval(fs.readFileSync(infile, 'UTF8'));
+    return main;
+  })();
+
   main().compile(out);
 } catch (err) {
   // On error, delete the output file
