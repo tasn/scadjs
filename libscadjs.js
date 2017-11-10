@@ -31,6 +31,26 @@ class ScadBase {
     return ret;
   }
 
+  linearExtrude(height, center) {
+    class LinearExtrude extends ScadBase {
+      constructor(children, height, center) {
+        super(center);
+        this.type = 'linear_extrude'; // Manually set the type as it doesn't match the class name
+        this.children = children;
+        this.set({height: height});
+      }
+
+      compile(out) {
+        super.compile(out);
+        out(this.dictToParams(this.props) + ') {\n');
+        this.compileChildren(out);
+        out('}\n');
+      }
+    }
+
+    return new LinearExtrude([this], height, center);
+  }
+
   set(newProps) {
     this.props = Object.assign({}, newProps, this.props);
   }
@@ -93,26 +113,7 @@ class Shape extends ScadBase {
 }
 
 // 2D shapes
-class LinearExtrude extends ScadBase {
-  constructor(children, height, center) {
-    super(center);
-    this.type = 'linear_extrude'; // Manually set the type as it doesn't match the class name
-    this.children = children;
-    this.set({height: height});
-  }
-
-  compile(out) {
-    super.compile(out);
-    out(this.dictToParams(this.props) + ') {\n');
-    this.compileChildren(out);
-    out('}\n');
-  }
-}
-
 class Shape2D extends Shape {
-  linearExtrude(height, center) {
-    return new LinearExtrude([this], height, center);
-  }
 }
 
 class Circle extends Shape2D {
