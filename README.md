@@ -9,7 +9,7 @@ should be easy, quite hard. Even basic things like conditional variable
 assignments can be a pain, not to mention complex data manipulations and logic.
 
 ScadJS brings the power of JavaScript to OpenScad! Unlike [OpenJSCAD.org](https://openjscad.org/)
-which reimplemented the scad engine, and is therefore have yet to reach feature
+which reimplemented the scad engine, and therefore has yet to reach feature
 parity (for example, `hull()` and supporting different fonts), ScadJS just
 converts your JavaScript code to `.scad`.
 
