@@ -54,7 +54,7 @@ Becomes:
 intersection(
     cube(5),
     circle(2).linearExtrude(5)
-}
+)
 ```
 
 Unfortunately there are no full docs at the moment, but you can take a look at
