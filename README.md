@@ -1,3 +1,8 @@
+# Deprecation notice!
+
+ScadJS is deprecated and no longer maintained.
+[SCAD-JS](https://github.com/scad-js/scad-js) is another project with the same objective.
+
 # ScadJS
 
 A tool for creating OpenScad files using JavaScript and an OpenScad like syntax!
